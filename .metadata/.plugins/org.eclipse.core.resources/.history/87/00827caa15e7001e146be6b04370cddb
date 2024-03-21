@@ -1,3 +1,0 @@
-INSERT INTO TB_CATEGORY(name, created_At) values ('Books', NOW());
-INSERT INTO TB_CATEGORY(name, created_At) values ('Eletronics', NOW());
-INSERT INTO TB_CATEGORY(name, created_At) values ('Computers', NOW());

@@ -1,5 +1,0 @@
-package com.michel.dscatalog.services.exception;
-
-public class EntityNotFoundException {
-
-}

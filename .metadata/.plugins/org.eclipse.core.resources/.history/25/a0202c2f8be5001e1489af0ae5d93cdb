@@ -1,5 +1,0 @@
-package com.michel.dscatalog.entities.dto.category;
-
-public class CategoryDTO {
-
-}
