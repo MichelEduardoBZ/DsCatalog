@@ -1,0 +1,5 @@
+package com.michel.dscatalog.resources.exceptions;
+
+public class StandardError {
+
+}

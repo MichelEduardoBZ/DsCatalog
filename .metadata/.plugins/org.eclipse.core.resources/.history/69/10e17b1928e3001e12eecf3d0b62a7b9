@@ -1,0 +1,5 @@
+package com.michel.dscatalog.repositories;
+
+public class CategoryRepository {
+
+}
