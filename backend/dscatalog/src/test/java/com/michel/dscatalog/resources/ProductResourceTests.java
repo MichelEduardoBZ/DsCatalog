@@ -2,8 +2,8 @@ package com.michel.dscatalog.resources;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.doThrow;
-import static org.springframework.test.web.servlet.request.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -70,10 +70,8 @@ public class ProductResourceTests {
 	}
 	
 	@Test
-	public void deleteShouldIdRetornNoContentWhenIdExists() {
-		ResultActions result = mockMvc.perform(delete("/prodcts/{id}", existingId))
-				.accept(MediaType.APPLICATION_JSON);
-		
+	public void deleteShouldIdRetornNoContentWhenIdExists() throws Exception {
+		ResultActions result = mockMvc.perform(delete("/prodcts/{id}", existingId));
 		result.andExpect(status().isNoContent());
 	}
 	
@@ -99,7 +97,7 @@ public class ProductResourceTests {
 		
 		String jsonBody = objectMapper.writeValueAsString(productDTO);
 		
-		ResultActions result =  mockMvc.perform(post("/products}")
+		ResultActions result =  mockMvc.perform(post("/products")
 				.content(jsonBody)
 				.contentType(MediaType.APPLICATION_JSON)
 				.accept(MediaType.APPLICATION_JSON));
